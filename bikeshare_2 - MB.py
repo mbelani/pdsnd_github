@@ -1,4 +1,10 @@
-import time
+"""
+This module reads bikeshare data for any of three cities, and provides
+statistics (count, average duration, etc.) on bike usage. The user is
+prompted for the city (to read data for), and the kind of statistics
+to be displayed.
+"""
+
 import datetime
 import pandas as pd
 from tabulate import tabulate
