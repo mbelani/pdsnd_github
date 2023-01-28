@@ -108,8 +108,8 @@ def get_filters():
                         no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
+    
     # get user input for city (chicago, new york city, washington).
-    #HINT: Use a while loop to handle invalid inputs
     city = prompt_user_for_city()
 
     # Default the month and day filters to be all (i.e., no filters)    
@@ -342,6 +342,11 @@ def show_df_data(df):
                 break
 
 def main():
+    """
+    The main loop - interactively prompts the users for filters (city,
+    time period, etc.), and provides statistics for the selected filters.
+    """
+    
     while True:
         city, month, day = get_filters()
         df, df_orig_col_list = load_data(city, month, day)
