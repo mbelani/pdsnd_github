@@ -1,1 +1,7 @@
-.github/**
+*.csv
+*.doc*
+*.pdf
+*.png
+*.ppt*
+*.zip
+*pycache*
