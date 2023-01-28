@@ -3,6 +3,9 @@
 Created on Thu Dec 22 11:07:07 2022
 
 @author: mbelani
+
+Module to construct a prompt, and to display it to the user repeatedly,
+until a valid input is received.
 """
 
 class Prompter:
