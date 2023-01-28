@@ -11,7 +11,7 @@ class StatsUtil:
     """
     Simple class to keep track of execution time. Start time is set to the
     time of object creation, whereas end time is handled in the destructor
-    (i.e., when the object is descoped/deleted)
+    (i.e., when the object is descoped/deleted).
     """
     
     def __init__(self):
