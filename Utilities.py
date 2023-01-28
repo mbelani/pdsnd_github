@@ -8,9 +8,23 @@ Created on Thu Dec 22 22:32:41 2022
 class Utilities:
     def __init__ (self):
         print("In init")
-        
+
     @staticmethod    
     def format_seconds(num_seconds):
+        """
+        Parameters
+        ----------
+        num_seconds : numeric
+            The number of seconds to be converted to the various time
+            components (weeks/days/hours/mins/secs).
+
+        Returns
+        -------
+        string
+            seconds converted to weeks/days/hours/minutes/seconds returned
+            as a string.
+
+        """
         nweeks = 0
         ndays = 0
         nhours = 0
