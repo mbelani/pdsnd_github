@@ -2,16 +2,23 @@
 
 ### Date created
 Include the date you created this project and README file.
+Created on: Jan 28, 2023
 
 ### Project Title
-Replace the Project Title
+Bikeshare Project (part of the Data Scientist Nanodegree)
 
 ### Description
-Describe what your project is about and what it does
+Reads bike sharing data of one of 3 cities (Chicago, New York, or Washington) and provides a number of statistics.
 
 ### Files used
-Include the files used
+bikeshare_2 - MB.py - the main file; contains the main code, as well as a number of helper functions
+Prompter.py - class to help set up the prompts (for city, period, etc.)
+StatsUtil.py - class used purely to compute the time taken to execute a block of code
+Utilities.py - utility class containing generic methods - e.g., to convert seconds to weeks/days/hours/mins/secs
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Web sites used as a reference or to look at Python code snippets:
+https://pandas.pydata.org/
+https://stackoverflow.com/
+https://www.geeksforgeeks.org/
 
