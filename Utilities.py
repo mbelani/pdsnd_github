@@ -33,6 +33,8 @@ class Utilities:
         
         num_seconds = int(num_seconds)
         
+        # Compute (mathematically) the number of seconds, minutes, hours,
+        # days, weeks
         if num_seconds >= 60:
             nminutes = num_seconds // 60
             num_seconds -= nminutes * 60
