@@ -182,7 +182,8 @@ def load_data(city, month, day):
     
     # Get station start and end combo
     df['station_end_points'] = df['Start Station'] + ' => ' + df['End Station']
-        
+
+    # Retrun the data as well as the (original) column list.
     return df, df_orig_col_list
 
 
@@ -344,7 +345,7 @@ def main():
     while True:
         city, month, day = get_filters()
         df, df_orig_col_list = load_data(city, month, day)
-        
+
         if df is None:
             print("Error loading data! Exiting!")
 
@@ -352,6 +353,7 @@ def main():
 
         print("City: {}, month: {}, day: {}.".format(city, month, day))
 
+        # Get (and print) data statistics.
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
