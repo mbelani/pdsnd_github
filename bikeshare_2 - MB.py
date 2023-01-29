@@ -146,6 +146,9 @@ def load_data(city, month, day):
         
         return None
     
+    # Save the original list of columns, as we plan to add some columns to
+    # the dataset. The raw data will be shown using the original columns in
+    # the dataset.
     df_orig_col_list = df.columns
     
     # convert the Start Time column to datetime
@@ -276,6 +279,8 @@ def user_stats(df):
               "Most frequent year of birth: {}"
               .format(int(df['Birth Year'].min()), int(df['Birth Year'].max()), 
                       int(df['Birth Year'].mode()[0])))
+        
+        # Show number of rides based on age groups/bands.
         bins = [0, 10, 20, 30, 40, 50, 60, 70, 80, 100, 125]
         grouped = df.groupby(pd.cut(df['age'], bins = bins)).size()
         print("Data grouped by age groups:")
