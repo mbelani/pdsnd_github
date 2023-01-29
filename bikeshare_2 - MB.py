@@ -276,6 +276,8 @@ def user_stats(df):
             print("Count of gender {}: {}"
                   .format(gender, (df['Gender'] == gender).sum()))
 
+    # Note that the Birty Year attribute may not be present in all the
+    # city data files.
     if 'Birth Year' in df:
         # Display earliest, most recent, and most common year of birth
         print("Earliest year of birth: {} \nLatest year of birth: {} \n"
@@ -351,6 +353,7 @@ def main():
         city, month, day = get_filters()
         df, df_orig_col_list = load_data(city, month, day)
         
+        # df will be None if the above load failed
         if df is None:
             print("Error loading data! Exiting!")
 
@@ -358,6 +361,7 @@ def main():
 
         print("City: {}, month: {}, day: {}.".format(city, month, day))
 
+        # Print all the stats        
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
