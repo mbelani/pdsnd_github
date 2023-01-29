@@ -102,14 +102,14 @@ def get_filters():
                         no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
+
     # get user input for city (chicago, new york city, washington).
-    #HINT: Use a while loop to handle invalid inputs
     city = prompt_user_for_city()
 
     # Default the month and day filters to be all (i.e., no filters)    
     month = 'all'
     day = 'all'
-    
+
     md_filters = prompt_user_for_addl_filters()
     
     # 'none' indicates no filtering
