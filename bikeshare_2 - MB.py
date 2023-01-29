@@ -108,14 +108,14 @@ def get_filters():
                         no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    
+
     # get user input for city (chicago, new york city, washington).
     city = prompt_user_for_city()
 
     # Default the month and day filters to be all (i.e., no filters)    
     month = 'all'
     day = 'all'
-    
+
     md_filters = prompt_user_for_addl_filters()
     
     # 'none' indicates no filtering
@@ -152,6 +152,9 @@ def load_data(city, month, day):
         
         return None
     
+    # Save the original list of columns, as we plan to add some columns to
+    # the dataset. The raw data will be shown using the original columns in
+    # the dataset.
     df_orig_col_list = df.columns
     
     # convert the Start Time column to datetime
@@ -185,7 +188,8 @@ def load_data(city, month, day):
     
     # Get station start and end combo
     df['station_end_points'] = df['Start Station'] + ' => ' + df['End Station']
-        
+
+    # Retrun the data as well as the (original) column list.
     return df, df_orig_col_list
 
 
@@ -284,6 +288,8 @@ def user_stats(df):
               "Most frequent year of birth: {}"
               .format(int(df['Birth Year'].min()), int(df['Birth Year'].max()), 
                       int(df['Birth Year'].mode()[0])))
+        
+        # Show number of rides based on age groups/bands.
         bins = [0, 10, 20, 30, 40, 50, 60, 70, 80, 100, 125]
         grouped = df.groupby(pd.cut(df['age'], bins = bins)).size()
         print("Data grouped by age groups:")
@@ -361,7 +367,7 @@ def main():
 
         print("City: {}, month: {}, day: {}.".format(city, month, day))
 
-        # Print all the stats        
+        # Get (and print) data statistics.
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
